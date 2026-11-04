@@ -73,17 +73,17 @@ h1 .l3{display:block;font-style:normal;color:var(--gold2);font-size:.65em;margin
 .vid-progress{position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(255,255,255,.05);z-index:4}
 .vid-progress-fill{height:100%;background:linear-gradient(90deg,var(--ember),var(--ember3),var(--gold2));width:0%;transition:width .3s}
 
-/* LIVE PILL */
-.live-watch{display:inline-flex;align-items:center;gap:9px;margin-top:22px;font-size:11px;color:var(--cream3);background:rgba(0,0,0,.3);border:1px solid var(--bd);padding:7px 15px;letter-spacing:1px}
+/* POST-VIDEO (live + instrução lado a lado) */
+.post-video{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:22px}
+.live-watch{display:inline-flex;align-items:center;gap:9px;font-size:12px;color:var(--cream3);background:rgba(0,0,0,.3);border:1px solid var(--bd);padding:8px 16px;letter-spacing:1px}
 .live-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.7);animation:livepulse 1.5s infinite}
 @keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.7)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
 #live-count{color:var(--ember3);font-weight:700}
 
-/* INSTRUÇÕES ABAIXO */
-.instructions{margin:28px auto 0;max-width:620px;padding:22px 28px;background:rgba(0,0,0,.35);border-left:3px solid var(--ember);text-align:left}
-.instructions-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--gold2);font-weight:700;margin-bottom:8px}
-.instructions-text{font-size:14px;color:var(--cream2);line-height:1.75;font-weight:300}
-.instructions-text b{color:var(--cream);font-weight:600}
+.instructions{display:inline-flex;align-items:center;gap:12px;max-width:640px;padding:14px 22px;background:rgba(212,65,10,.06);border:1px solid rgba(212,65,10,.25);border-left:3px solid var(--ember);text-align:left}
+.instructions-ico{font-size:22px;flex-shrink:0;line-height:1}
+.instructions-text{font-size:13.5px;color:var(--cream2);line-height:1.55;font-weight:300}
+.instructions-text b{color:var(--gold2);font-weight:700}
 
 /* ===== REVEAL CTA ===== */
 #reveal-cta{max-width:620px;margin:36px auto 0;padding:0 16px;opacity:0;transform:translateY(32px);pointer-events:none;transition:opacity .9s ease,transform .9s ease}
@@ -116,7 +116,9 @@ footer a{color:var(--cream3);text-decoration:underline}
   .play-btn{width:76px;height:76px}
   .play-btn svg{width:26px;height:26px}
   .hero-l{padding:36px 16px 44px}
-  .instructions{padding:18px 20px;margin-top:22px}
+  .instructions{padding:12px 16px;gap:10px}
+  .instructions-text{font-size:12.5px}
+  .instructions-ico{font-size:18px}
   .player-glow{inset:-4px;filter:blur(12px)}
 }
 </style>
@@ -146,17 +148,14 @@ footer a{color:var(--cream3);text-decoration:underline}
 <!-- HERO -->
 <div class="hero">
   <div class="hero-l">
-    <div class="h-kicker"><span class="kd"></span>🎥 Revelação exclusiva · Assista até o final</div>
+    <div class="h-kicker"><span class="kd"></span>🎥 Assista até o final — revelação exclusiva</div>
 
-    <p class="hero-pre">Por que caras comuns saem com quem você quer</p>
     <h1>
       <span class="l1">Do Zero</span>
       <span class="l2">ao Tesão</span>
       <span class="l3">em Minutos</span>
     </h1>
-    <p class="hero-deck">O que ninguém te contou: <b>atração não tem nada a ver com aparência ou dinheiro.</b> Veja no vídeo abaixo o gatilho invisível que ativa o desejo dela — <b>antes mesmo de você abrir a boca.</b></p>
-
-    <div class="h-warn">🔊 Clique no vídeo para ouvir — o áudio é essencial</div>
+    <p class="hero-deck">O gatilho invisível que ativa o desejo dela — <b>antes mesmo de você abrir a boca.</b></p>
 
     <!-- VIDEO PLAYER -->
     <div class="player-wrap">
@@ -188,16 +187,15 @@ footer a{color:var(--cream3);text-decoration:underline}
       </div>
     </div>
 
-    <div class="live-watch">
-      <span class="live-dot"></span>
-      <span><span id="live-count">214</span> homens estão assistindo este vídeo agora</span>
-    </div>
-
-    <div class="instructions">
-      <div class="instructions-title">⚠️ Importante</div>
-      <p class="instructions-text">
-        Assista o vídeo <b>até o final</b> para desbloquear o acesso à oferta exclusiva. O botão abaixo só aparecerá após alguns minutos de vídeo — <b>não feche esta página</b>, você pode perder essa oportunidade para sempre.
-      </p>
+    <div class="post-video">
+      <div class="live-watch">
+        <span class="live-dot"></span>
+        <span><span id="live-count">214</span> homens assistindo agora</span>
+      </div>
+      <div class="instructions">
+        <span class="instructions-ico">⚠️</span>
+        <span class="instructions-text">Assista <b>até o final</b> — o botão de acesso só libera quando o vídeo termina.</span>
+      </div>
     </div>
 
     <!-- CTA REVELADO -->
